@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>イベント詳細</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .event-details { margin-top: 20px; }
+        .event-details p { margin: 5px 0; }
+        .back-link { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>イベント詳細</h1>
+    {% if event %}
+        <div class="event-details">
+            <p><strong>ID:</strong> {{ event.ID }}</p>
+            <p><strong>名前:</strong> {{ event.Name }}</p>
+            <p><strong>年:</strong> {{ event.Year }}</p>
+            <p><strong>場所:</strong> {{ event.Place }}</p>
+        </div>
+    {% else %}
+        <p>該当するイベントが見つかりませんでした。</p>
+    {% endif %}
+    <a href="/" class="back-link">別のIDで検索</a>
+</body>
+</html>
