@@ -1,7 +1,7 @@
 import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-with open("sample1-2.html", mode="r", encoding="utf-8") as file:
+with open("a1-2.html", mode="r", encoding="utf-8") as file:
     template = file.read()
     # sample1-2.htmlを読み込みモードで開く．文字コードはutf-8に指定する．HTMLファイルの中身をtemplateに代入する．ファイルをwithでopenすると，自動的にcloseする．
 

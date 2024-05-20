@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <table border="1">
+        <tr>
+            {% for item in schema %}
+            <th>{{ item }}</th>
+            {% endfor %}
+            <th>残り日数</th>
+        </tr>
+        {% for row in table %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+            <td>{{ days_left(row[4]) }}</td> 
+            <!-- コンテキストプロセッサで定義した関数を使用 -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

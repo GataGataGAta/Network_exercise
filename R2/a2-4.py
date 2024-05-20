@@ -17,15 +17,12 @@ def input_form():
 
 @app.route("/", methods=["POST"])
 def output():
-    # POSTリクエストからidを取得し、整数に変換する
     event_id = request.form.get("id")
     if event_id.isdigit():
         event_id = int(event_id)
         event = events.get(event_id)
         if event:
-            # イベントが見つかった場合は、出力ページをレンダリング
             return render_template("a2-4out.html", event=event)
-    # イベントが見つからない場合はエラーメッセージとともに入力フォームを再表示
     return render_template("a2-4in.html", title="フォームの利用", error="イベントが見つかりませんでした。")
 
 if __name__ == "__main__":

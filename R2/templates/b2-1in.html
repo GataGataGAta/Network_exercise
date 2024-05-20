@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>外貨から日本円への換算</title>
+</head>
+<body>
+    <h1>外貨から日本円への換算</h1>
+    <form action="/convert" method="post">
+        <label>外貨の種類を選択してください：</label><br>
+        <select name="currency">
+            <option value="USD">USドル</option>
+            <option value="EUR">ユーロ</option>
+            <option value="GBP">英ポンド</option>
+        </select><br><br>
+        <label>金額を入力してください：</label><br>
+        <input type="text" name="amount" required><br><br>
+        <input type="submit" value="両替">
+    </form>
+</body>
+</html>

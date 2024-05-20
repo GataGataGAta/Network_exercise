@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% if second % 2==1 %}
+    <p><font color = "blue">いまは{{hour}}時{{minute}}分{{second}}秒です．</font></p>
+    {% else %}
+    <p><font color = "red">いまは{{hour}}時{{minute}}分{{second}}秒です．</font></p>
+    {% endif %}
+</body>
+
+</html>

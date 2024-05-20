@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <table border="1">
+        <tr>
+            {% for item in schema %}
+            <th>{{ item }}</th>
+            {% endfor %}
+            <th>残り日数</th>
+        </tr>
+        {% for row in table %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+            <td>{{ row[4]|days_left}}</td> 
+            <!-- イベントテーブルの5番目にイベントの日数を定義(row[4]) -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
