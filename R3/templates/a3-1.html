@@ -7,11 +7,22 @@
 </head>
 
 <body>
-    {% if second % 2==1 %}
-    <p><font color = "blue">いまは{{hour}}時{{minute}}分{{second}}秒です．</font></p>
-    {% else %}
-    <p><font color = "red">いまは{{hour}}時{{minute}}分{{second}}秒です．</font></p>
-    {% endif %}
+    <h1>{{title}}</h1>
+    <table border="1">
+        <tr>
+            {% for item in schema %}
+            <th>{{item}}</th>
+            {% endfor %}
+        </tr>
+        {% for tuple in table %}
+        <tr>
+            {% for item in tuple %}
+            <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+    </table>
 </body>
 
 </html>

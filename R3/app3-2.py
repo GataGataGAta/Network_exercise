@@ -25,7 +25,6 @@ def time_filter(time):
    leftTime = datetime.datetime.now()-datetime.time(16, 27, 30)
    return leftTime
 
-
 app.jinja_env.filters["period"] = time_filter
 
 

@@ -13,8 +13,8 @@ table = [
 @app.template_filter('days_left')
 def days_left(event_date):
     now = datetime.datetime.now()
-    delta = event_date - now
-    return delta.days  
+    left = event_date - now
+    return left.days  
 
 @app.route("/")
 def timetable():
@@ -22,4 +22,4 @@ def timetable():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host="localhost", port=8000)
+    app.run(host="localhost")
