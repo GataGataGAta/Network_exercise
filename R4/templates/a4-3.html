@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        .past {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for column in schema %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table %}
+                <tr class="{% if loop.index0 < 2 %}past{% endif %}">
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

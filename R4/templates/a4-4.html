@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>イベント入力</title>
+</head>
+<body>
+    <h1>イベント入力</h1>
+    <form action="/add_event" method="post">
+        <label for="date">日付 (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="event">イベント名:</label>
+        <input type="text" id="event" name="event" required><br><br>
+        <input type="submit" value="追加">
+    </form>
+</body>
+</html>
