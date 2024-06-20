@@ -16,4 +16,4 @@ INSERT INTO events(name, date, place) VALUES('エジプトオリンピック','2
 SELECT * FROM events;
 SELECT * FROM events WHERE name LIKE '%アテネ%';
 SELECT * FROM events WHERE date > CURRENT_DATE;
-SELECT * FROM events WHERE date < CURRENT_DATE;
+SELECT * FROM events WHERE date < CURRENT_DATE AND place = "中国";

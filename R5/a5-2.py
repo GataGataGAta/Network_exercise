@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, datetime
 from flask import Flask, g, render_template
 
 app = Flask(__name__)
@@ -21,8 +21,9 @@ def database():
     cur = db.execute("SELECT * FROM events")  
     table = cur.fetchall()
     close_db()
+    today = datetime.datetime.now()
     schema = ["ID", "名前", "日時", "場所"]  # 適宜修正すること
-    return render_template("a5-2.html", title="DBテスト", schema=schema, table=table)
+    return render_template("a5-2.html", title="DBテスト", schema=schema, table=table, today=today)
 
 if __name__ == "__main__":
     app.run(debug=True, host="localhost", port=8000)

@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # セッションを利用するための秘密鍵
+app.secret_key = 'your_secret_key'  
 
 @app.route("/", methods=["GET", "POST"])
 def calculator():
     if 'x' not in session:
-        session['x'] = 0  # 初期値を設定
+        session['x'] = 0 
 
     x = session['x']
     y = None
@@ -27,9 +27,9 @@ def calculator():
                 if y == 0:
                     error = "0で割ることはできません。"
                 else:
-                    x //= y  # 整数除算
+                    x //= y  
 
-            session['x'] = x  # セッションに保存
+            session['x'] = x 
 
         except ValueError:
             error = "有効な整数を入力してください。"

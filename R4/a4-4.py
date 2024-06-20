@@ -12,7 +12,6 @@ def add_event():
     event_date = request.form["date"]
     event_name = request.form["event"]
 
-    # 日付のバリデーション
     try:
         datetime.strptime(event_date, "%Y-%m-%d")
     except ValueError:

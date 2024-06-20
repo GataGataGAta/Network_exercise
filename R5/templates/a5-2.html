@@ -7,6 +7,9 @@
         .past {
             background-color: yellow;
         }
+        .future {
+            background-color: white;  
+        }
     </style>
 </head>
 <body>
@@ -21,7 +24,7 @@
         </thead>
         <tbody>
             {% for row in table %}
-                <tr class="{% if loop.index0 < 6 %}past{% endif %}">
+                <tr class="{{ 'past' if row['date'] < today.strftime('%Y-%m-%d') else 'future' }}">
                     {% for cell in row %}
                         <td>{{ cell }}</td>
                     {% endfor %}
