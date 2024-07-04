@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>イベント情報</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">イベント情報</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>イベント名</th>
+                <th>開催年</th>
+                <th>開催地</th>
+            </tr>
+            <tr>
+                <td>{{ event.ID }}</td>
+                <td>{{ event.Name }}</td>
+                <td>{{ event.Year }}</td>
+                <td>{{ event.Place }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light text-center">
+        <div class="container">
+            <span class="text-muted">Copyright 2024 Hayato Yamagata.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
