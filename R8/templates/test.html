@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <table border="1">
+        <tr>
+            {% for item in schema %}
+            <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
+        {% for event in events %}
+        <tr style="color: {% if datetime.strptime(event.date, '%Y-%m-%d').date() < today %}black{% else %}red{% endif %};">
+            <td>{{ event.date }}</td>
+            <td>{{ event.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

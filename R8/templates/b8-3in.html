@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Event</title>
+</head>
+<body>
+    <h1>イベント選択</h1>
+    <form action="/output" method="GET">
+        <label for="event">イベントを選択してください</label>
+        <select id="event" name="event">
+            {% for event in events %}
+                <option value="{{ event.id }}">{{ event.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

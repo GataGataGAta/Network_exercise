@@ -1,4 +1,4 @@
-.open a5-1.db
+.open events.db
 .mode box
 DROP TABLE IF EXISTS events;
 CREATE TABLE events(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, date DATE, place TEXT);

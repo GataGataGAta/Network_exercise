@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>書籍管理</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">書籍管理</h1>
+        
+        <h2>書籍の追加</h2>
+        <form action="/add-book" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="title">書籍名:</label>
+                <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="author">著者:</label>
+                <input type="text" id="author" name="author" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="published_date">出版日:</label>
+                <input type="date" id="published_date" name="published_date" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">追加</button>
+        </form>
+        
+        <h2>書籍の削除</h2>
+        <form action="/delete-book" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="id">書籍ID:</label>
+                <input type="number" id="id" name="id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-danger">削除</button>
+        </form>
+        
+        <h2>書籍検索</h2>
+        <form action="/search-book" method="get" class="mb-4">
+            <div class="form-group">
+                <label for="search-title">書籍名検索:</label>
+                <input type="text" id="search-title" name="search-title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="search-author">著者検索:</label>
+                <input type="text" id="search-author" name="search-author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="search-published_date">出版日検索 (年-月-日):</label>
+                <input type="date" id="search-published_date" name="search-published_date" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-secondary">検索</button>
+        </form>
+        
+        <h2>書籍一覧</h2>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>書籍名</th>
+                    <th>著者</th>
+                    <th>出版日</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in books %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.title }}</td>
+                    <td>{{ row.author }}</td>
+                    <td>{{ row.published_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

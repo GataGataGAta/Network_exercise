@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>イベント管理</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">イベント管理</h1>
+        
+        <h2>イベントの追加</h2>
+        <form action="/add-event" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="name">イベント名:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="date">日時:</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="place">場所:</label>
+                <input type="text" id="place" name="place" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+        
+        <h2>イベントの削除</h2>
+        <form action="/delete-event" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="id">イベントID:</label>
+                <input type="number" id="id" name="id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-danger">削除</button>
+        </form>
+        
+        <h2>イベント検索</h2>
+        <form action="/search-event" method="get" class="mb-4">
+            <div class="form-group">
+                <label for="search-name">イベント名検索:</label>
+                <input type="text" id="search-name" name="search-name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="search-date">日付検索 (年-月-日):</label>
+                <input type="date" id="search-date" name="search-date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="search-place">場所検索:</label>
+                <input type="text" id="search-place" name="search-place" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-secondary">検索</button>
+        </form>
+        
+        <h2>イベント一覧</h2>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>イベント名</th>
+                    <th>日時</th>
+                    <th>場所</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in events %}
+                <tr class="{{ 'table-warning' if row.date < today else '' }}">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.place }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

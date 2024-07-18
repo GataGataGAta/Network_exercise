@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>イベントまでの残り日数検索</title>
+</head>
+<body>
+    <h1>イベントまでの残り日数検索</h1>
+    <form id="eventForm" method="POST" action="/countdown">
+        <label for="name">イベント名:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="date">イベント日 (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" required>
+        <input type="submit" value="送信">
+    </form>
+    <div id="result"></div>
+</body>
+</html>
